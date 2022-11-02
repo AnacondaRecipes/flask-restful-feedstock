@@ -52,6 +52,7 @@ about:
   summary: 'Simple framework for creating REST APIs'
   doc_url: https://flask-restful.readthedocs.io/en/latest/
   dev_url: https://github.com/flask-restful/flask-restful/
+  doc_source_url: https://github.com/flask-restful/flask-restful/blob/master/docs/index.rst
   description: |
     Flask-RESTful is an extension for Flask that adds support
     for quickly building REST APIs. It is a lightweight
