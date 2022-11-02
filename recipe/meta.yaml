@@ -44,14 +44,14 @@ test:
     - flask_restful.utils
 
 about:
-  home: https://www.github.com/flask-restful/flask-restful/
+  home: https://github.com/flask-restful/flask-restful/
   license: BSD 3-Clause
   license_file: LICENSE
   license_family: BSD
   license_url: https://github.com/flask-restful/flask-restful/blob/master/LICENSE
   summary: 'Simple framework for creating REST APIs'
   doc_url: https://flask-restful.readthedocs.io/en/latest/
-  dev_url: https://www.github.com/flask-restful/flask-restful/
+  dev_url: https://github.com/flask-restful/flask-restful/
 
 extra:
   recipe-maintainers:
