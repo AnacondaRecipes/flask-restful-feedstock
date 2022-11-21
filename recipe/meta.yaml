@@ -1,8 +1,8 @@
 {% set name = "Flask-RESTful" %}
-{% set version = "0.3.8" %}
+{% set version = "0.3.9" %}
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash_val = "5ea9a5991abf2cb69b4aac19793faac6c032300505b325687d7c305ffaa76915" %}
+{% set hash_val = "ccec650b835d48192138c85329ae03735e6ced58e9b2d9c2146d6c84c06fa53e" %}
 {% set build = 0 %}
 
 package:
@@ -15,7 +15,6 @@ source:
   {{ hash_type }}: {{ hash_val }}
 
 build:
-  noarch: python
   number: {{ build }}
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
@@ -24,6 +23,7 @@ requirements:
     - pip
     - python
     - setuptools
+    - wheel
 
   run:
     - python
@@ -33,19 +33,32 @@ requirements:
     - pytz
 
 test:
+  requires:
+    - pip
+  commands:
+    - pip check
   imports:
     - flask_restful
     - flask_restful.representations
     - flask_restful.utils
 
 about:
-  home: https://www.github.com/flask-restful/flask-restful/
-  license: BSD 3-Clause
+  home: https://github.com/flask-restful/flask-restful/
+  license: BSD-3-Clause
   license_file: LICENSE
   license_family: BSD
+  license_url: https://github.com/flask-restful/flask-restful/blob/master/LICENSE
   summary: 'Simple framework for creating REST APIs'
   doc_url: https://flask-restful.readthedocs.io/en/latest/
-  dev_url: https://www.github.com/flask-restful/flask-restful/
+  dev_url: https://github.com/flask-restful/flask-restful/
+  doc_source_url: https://github.com/flask-restful/flask-restful/blob/master/docs/index.rst
+  description: |
+    Flask-RESTful is an extension for Flask that adds support
+    for quickly building REST APIs. It is a lightweight
+    abstraction that works with your existing ORM/libraries.
+    Flask-RESTful encourages best practices with minimal setup.
+    If you are familiar with Flask, Flask-RESTful should be easy
+    to pick up.
 
 extra:
   recipe-maintainers:
