@@ -32,6 +32,12 @@ requirements:
 # E   - /
 # E   + http://localhost/
 {% set deselect_tests = " --deselect=tests/test_api.py::APITestCase::test_redirect" %}
+# >   self.assertEqual("Mon, 22 Aug 2011 19:58:45 -0000", field.output("bar", obj))
+# E   AssertionError: 'Mon, 22 Aug 2011 19:58:45 -0000' != 'Mon, 22 Aug 2011 20:40:45 -0000'
+# E   - Mon, 22 Aug 2011 19:58:45 -0000
+# E   ?                  ^^ ^^
+# E   + Mon, 22 Aug 2011 20:40:45 -0000
+# E   ?                  ^^ ^
 {% set deselect_tests = deselect_tests + " --deselect=tests/test_fields.py::FieldsTestCase::test_iso8601_date_field_with_offset" %}
 {% set deselect_tests = deselect_tests + " --deselect=tests/test_fields.py::FieldsTestCase::test_rfc822_date_field_with_offset" %}
 
