@@ -50,7 +50,11 @@ test:
     - flask_restful.utils
   commands:
     - pip check
-    - pytest -v tests {{ deselect_tests }}
+    # ModuleNotFoundError: No module named 'imp' for py>311
+    # In Python from 3.12 there is no module called imp. Instead of use importlib as:
+    # from importlib import import_module
+    # https://docs.python.org/3/whatsnew/3.12.html#imp
+    - pytest -v tests {{ deselect_tests }}  # [py<312]
   requires:
     - pip
     # 'yield' keyword is allowed in fixtures, but not in tests, upper bound added
